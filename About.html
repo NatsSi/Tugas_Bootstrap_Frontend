@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us - Lifestyle Vibes</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"/>
+    <style>
+        body {
+          background-color: rgb(227,242,226);
+          font-family: 'Poppins';
+        }
+
+        nav {
+          background-color: rgb(207, 229, 205);
+        }
+
+        .nav-item a {
+          position: relative;
+        }
+
+        .nav-item a::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #32b592;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item a:hover::before {
+            width: 100%;
+            left: 0;
+        }
+
+        .active-nav::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            left: 0%;
+            height: 2px;
+            background-color: #32b592;
+            transition: all 0.3s ease;
+        }
+ 
+        .navbar-brand {
+            font-size: 24px;
+            color: #32b592;
+            font-weight: bold;
+        }
+
+        .nav-item a{
+          font-size: 21px;
+        }
+
+        #successAlert, #successAlert2 {
+          font-size: 21px;
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideInLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideInRight {
+          from {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        main h2 {
+            color: #32b592;
+            animation: fadeIn 1.5s ease;
+        }
+
+        main div:first-child {
+          animation: fadeIn 5s ease;
+        }
+
+        main div:nth-child(2) {
+          animation: fadeIn 6s ease;
+        }
+
+        main div:nth-child(3) {
+          animation: fadeIn 7s ease;
+        }
+
+        main div:nth-child(5) {
+          animation: fadeIn 8s ease;
+        }
+
+        #team div:first-child {
+          animation: slideInLeft 9s ease;
+        }
+
+        #team div:nth-child(2) {
+          animation: fadeIn 9s ease;
+        }
+
+        #team div:last-child {
+          animation: slideInRight 9s ease;
+        }
+
+        .sub h3  {
+          font-size: 24px;
+          color: #32b592;
+        }
+
+        .sub p {
+          font-size: 21px;
+        }
+
+        #image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .carousel-caption h5 {
+            font-size: 24px;
+            color: #32b592;
+        }
+
+        .carousel-caption p {
+            font-size: 21px;        
+        }
+
+        .card {
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            height: 600px;
+            object-fit: cover;
+        }
+
+        .card h5 {
+            font-size: 24px;
+            color: #32b592;
+        }
+
+        .card p {
+            font-size: 21px;
+        }
+
+        #subscribe {
+          background-color: rgb(227,242,226);
+          animation: fadeIn 10s ease;
+        }
+
+        #subscribe div h2 {
+          color: #32b592;
+        }
+
+        #subscribe p, #subscribe input, #subscribe button {
+          font-size: 21px;
+        }
+
+        #subscribe label {
+            font-size: 18px;
+        }
+
+        footer {
+          background-color: rgb(207, 229, 205);
+          font-size: 21px;
+        }
+
+        footer a {
+            text-decoration: none;
+        }
+    </style>
+  </head>
+  <body>
+  
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="Home.html">Lifestyle Vibes</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-center" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item me-3">
+            <a class="nav-link" href="Home.html">Home</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link" href="About.html">About</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalContantUs" href="Contact.html">Contact</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="btn btn-success text-white" href="Subscribe.html">Subscribe</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="successAlert" class="alert alert-success alert-dismissible fade show d-none justify-content-center text-center" role="alert">
+    You have successfully contacted us!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  <div id="successAlert2" class="alert alert-success alert-dismissible fade show d-none justify-content-center text-center" role="alert">
+    You have successfully subscribe!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  
+  <div class="modal fade" id="modalContantUs" tabindex="-1" aria-labelledby="modalContantUsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalContantUsLabel">Contant Us</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <form class="needs-validation" novalidate>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                <div class="invalid-feedback">
+                  Please enter your name.
+                </div>
+              </div>
+          
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                <div class="invalid-feedback">
+                  Please enter a valid email address.
+                </div>
+              </div>
+          
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="4" placeholder="Type your message here..." required></textarea>
+                <div class="invalid-feedback">
+                  Please enter your message.
+                </div>
+              </div>
+          
+              <div class="modal-footer justify-content-center">
+                <button class="btn btn-success" type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+    <main class="container my-3">
+      <h2 class="text-center mb-3">About Lifestyle Vibes</h2>
+        <div class="align-items-center text-center">
+            <div class="sub">
+                <h3>Our Story & Vision</h3>
+                <p>
+                    Lifestyle Vibes was created with a simple goal: to help people live
+                    better, healthier, and more fulfilling lives. We believe that true
+                    happiness comes from balance, mindfulness, and a deep connection to
+                    the world around us.
+                </p>
+            </div>
+
+            <div class="mb-5" id="image">
+                <img src="image/true_happiness.jpg" class="img-fluid rounded shadow">
+            </div>
+
+            <div class="sub">
+                <h3>Our Mission</h3>
+                <p>
+                    Our mission is to inspire and empower individuals to live
+                    consciously. We cover various aspects of life including wellness,
+                    fitness, fashion, and mindfulness to help our audience elevate their
+                    everyday experiences.
+                </p>
+            </div>
+
+            <div id="caraouselMission" class="carousel slide carousel-fade mb-5" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#caraouselMission" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#caraouselMission" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#caraouselMission" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#caraouselMission" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="15000">
+                    <img src="image/about_wellness.jpg" class="d-block w-100 rounded" alt="Slide 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Wellness</h5>
+                        <p>The foundation of a balanced life, encompassing physical, mental, and emotional well-being. It involves practices that nurture both body and mind, from proper nutrition and rest to managing stress and fostering positive relationships. Wellness is a journey rather than a destination; it encourages self-awareness and conscious choices that lead to a harmonious, fulfilling life.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="15000">
+                    <img src="image/fitness.jpg" class="d-block w-100 rounded" alt="Slide 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Fitness</h5>
+                        <p>vital component of overall health, focusing on regular physical activity that strengthens the body, boosts energy, and supports mental clarity. Fitness goes beyond exercise routines—it's about finding enjoyable ways to stay active, whether through structured workouts, outdoor activities, or mindful movement. Fitness empowers individuals by building resilience, improving mood, and enhancing overall physical and mental health.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="15000">
+                    <img src="image/fashion.jpg" class="d-block w-100 rounded" alt="Slide 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Fashion</h5>
+                        <p>Form of self-expression and a tool for building confidence. It’s about choosing clothing and styles that reflect individuality and personality while enhancing comfort and poise. Fashion empowers people to show up authentically, adding a sense of joy and confidence to their daily lives. Thoughtful fashion choices also encourage sustainable practices, aligning personal style with a conscious lifestyle.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="15000">
+                    <img src="image/mindfulness.jpg" class="d-block w-100 rounded" alt="Slide 4">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Mindfulness</h5>
+                        <p>The practice of staying fully present and engaged in the current moment, fostering a deeper connection with oneself and the world. It encourages self-compassion, reduces stress, and cultivates a greater awareness of thoughts, emotions, and surroundings. Through mindfulness, individuals develop a more intentional, grounded approach to life, making choices that align with their values and well-being.</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#caraouselMission" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#caraouselMission" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <div class="sub">
+                <h3>Meet the Team</h3>
+                <p>
+                    Our team consists of wellness enthusiasts, fitness experts, and
+                    lifestyle gurus. We're dedicated to bringing you the latest insights
+                    and trends to help you live your best life.
+                </p>
+            </div>
+
+            <div class="row" id="team">
+                <div class="col-md-4 mb-5">
+                    <div class="card shadow">
+                        <img src="image/zahra.jpg" class="card-img-top">
+                        <h5 class="card-title">Wellness Enthusiasts</h5>
+                        <p class="card-text">Zahra</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card shadow">
+                        <img src="image/layton.jpg" class="card-img-top">
+                        <h5 class="card-title">Fitness Experts</h5>
+                        <p class="card-text">Layton</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <img src="image/eloise.jpg" class="card-img-top">
+                        <h5 class="card-title">Lifestyle Gurus</h5>
+                        <p class="card-text">Eloise</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-5" id="subscribe">
+      <div class="container text-center">
+            <h2>Stay in the Loop</h2>
+            <h3>Subscribe to Our Newsletter</h3>
+          <form class="needs-validation2 row justify-content-center g-3" novalidate>
+            <div class="form-floating col-md-4">
+                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" required/>
+                <label for="floatingInput" class="ms-2">First Name</label>
+                <div class="invalid-feedback">
+                  Please enter your first name.
+                </div>
+              </div>
+              <div class="form-floating col-md-4">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required />
+                <label for="floatingInput" class="ms-2">Email Address</label>
+                <div class="invalid-feedback">
+                  Please enter a valid email address.
+                </div>
+              </div>
+              <div class="col-md-1">
+                <button type="submit" class="btn btn-success mt-2">
+                    Subscribe
+                </button>
+              </div>
+          </form>
+      </div>
+    </section>
+
+    <footer class="text-black text-center py-3">
+        <p>&copy; 2024 Lifestyle Vibes. All rights reserved.</p>
+        <a href="#" class="text-black">Privacy Policy</a> •
+        <a href="#" class="text-black">Terms & Conditions</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Navbar.js"></script>
+    <script src="FormContactUs.js"></script>
+    <script src="FormSubscribe.js"></script>
+  </body>
+</html>
